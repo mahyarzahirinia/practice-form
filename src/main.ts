@@ -4,5 +4,11 @@ import router from "./router";
 
 // Vuetify
 import { vuetifyInstance } from "./plugins/vuetify";
+// Persian date picker
+import { registerPersianDatePicker } from "./plugins/persian-date-picker";
 
-createApp(App).use(router).use(vuetifyInstance).mount("#app");
+const app = createApp(App);
+app.use(router);
+app.use(vuetifyInstance);
+registerPersianDatePicker(app);
+app.mount("#app");
